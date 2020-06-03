@@ -21,7 +21,6 @@ class _InitialScreenState extends State<InitialScreen> {
             child: Column(
               children: [
                 InstaAppBar(),
-                
                 InstaPost(),
                 InstaBottomBar(),
               ],

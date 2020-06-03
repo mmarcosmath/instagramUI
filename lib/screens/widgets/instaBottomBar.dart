@@ -9,33 +9,50 @@ class _InstaBottomBarState extends State<InstaBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black87,
-      width: double.maxFinite,
       height: 55,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          buttonBottom(Icons.home),
-          buttonBottom(Icons.search),
-          buttonBottom(Icons.add_box),
-          buttonBottom(Icons.favorite_border),
-          buttonBottom(Icons.account_circle),
-        ],
-      ),
-    );
-  }
+      color: Colors.black87,
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          
+          Widget buttonBottom(String icon) {
+            return Container(
+              width: constraints.maxWidth / 5,
+              child: GestureDetector(
+                child: Image.asset(
+                  icon,
+                  color: Colors.white,
+                  alignment: Alignment.center,
+                  height: constraints.maxHeight * 0.45,
+                ),
+                onTap: () {print("object");},
+              ),
+            );
+          }
 
-  Widget buttonBottom(IconData icon) {
-    return Container(
-      width: 50,
-      child: FlatButton(
-        highlightColor: Colors.transparent,
-        splashColor: Colors.transparent,
-        child: Icon(
-          icon,
-          size: 30,
-        ),
-        onPressed: () {},
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              buttonBottom('icons/casa.png'),
+              buttonBottom('icons/search.png'),
+              buttonBottom('icons/30.png'),
+              buttonBottom('icons/9.png'),
+              // CircleAvatar(
+              //   backgroundImage: AssetImage('icons/ft.jpg'),
+              //   radius: 15,
+              //   // backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
+              //   foregroundColor: ThemeData.dark().scaffoldBackgroundColor,
+              //   // child: Image.asset(
+              //   //   "icons/ft.jpg",
+              //   //   fit: BoxFit.contain,
+              //   //   // width: 20,
+              //   // ),
+              // )
+              buttonBottom('icons/ft.jpg'),
+              // buttonBottom(Icons.favorite_border),
+              // buttonBottom(Icons.account_circle),
+            ],
+          );
+        },
       ),
     );
   }
