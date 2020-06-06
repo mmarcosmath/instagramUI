@@ -9,8 +9,8 @@ class _InstaBottomBarState extends State<InstaBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
-      color: Colors.black87,
+      height: 45,
+      color: Colors.black54,
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           
@@ -36,20 +36,7 @@ class _InstaBottomBarState extends State<InstaBottomBar> {
               buttonBottom('icons/search.png'),
               buttonBottom('icons/30.png'),
               buttonBottom('icons/9.png'),
-              // CircleAvatar(
-              //   backgroundImage: AssetImage('icons/ft.jpg'),
-              //   radius: 15,
-              //   // backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
-              //   foregroundColor: ThemeData.dark().scaffoldBackgroundColor,
-              //   // child: Image.asset(
-              //   //   "icons/ft.jpg",
-              //   //   fit: BoxFit.contain,
-              //   //   // width: 20,
-              //   // ),
-              // )
-              buttonBottom('icons/ft.jpg'),
-              // buttonBottom(Icons.favorite_border),
-              // buttonBottom(Icons.account_circle),
+              buttonBottom('icons/41.png'),
             ],
           );
         },

@@ -9,8 +9,8 @@ class _InstaAppBarState extends State<InstaAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ThemeData.dark().scaffoldBackgroundColor,
-      height: 55,
+      color: Colors.black54,
+      height: 45,
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           Widget buttonAppBar(String icon) {

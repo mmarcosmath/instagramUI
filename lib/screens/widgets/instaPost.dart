@@ -34,6 +34,8 @@ class _InstaPostState extends State<InstaPost> {
           Widget itemPost() {
             return Container(
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +58,11 @@ class _InstaPostState extends State<InstaPost> {
                               ),
                             ),
                           ),
-                          Text("mmarcosmath"),
+                          Text(
+                            "mmarcosmath",
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                       IconButton(
@@ -87,6 +93,98 @@ class _InstaPostState extends State<InstaPost> {
                         ],
                       ),
                       buttonPost('icons/4.png'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 5, right: 5),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Align(
+                                alignment: Alignment(-1, 0),
+                                child: Container(
+                                  height: 20,
+                                  width: 20,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, 0),
+                                child: Container(
+                                  height: 20,
+                                  width: 20,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(1, 0),
+                                child: Container(
+                                  height: 20,
+                                  width: 20,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Curtido por ',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      Text(
+                        "mmarcosmath ",
+                        style: TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'e ',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      Text(
+                        "outras pessoas",
+                        style: TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Text(
+                      'Ver todos os x comentários ',
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Container(
+                          height: 20,
+                          width: 20,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        'Adicione um comentário... ',
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
                     ],
                   )
                 ],
