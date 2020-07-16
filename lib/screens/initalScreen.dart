@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:instagramui/screens/widgets/instaAppBar.dart';
-import 'package:instagramui/screens/widgets/instaBottomBar.dart';
-import 'package:instagramui/screens/widgets/instaPost.dart';
+import 'package:instagramui/screens/directScreen.dart';
+import 'package:instagramui/screens/homeScreen.dart';
+import 'package:instagramui/screens/widgets/teste.dart';
 
 class InitialScreen extends StatefulWidget {
   @override
@@ -10,17 +10,22 @@ class InitialScreen extends StatefulWidget {
 }
 
 class _InitialScreenState extends State<InitialScreen> {
+  ScrollController controller;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         top: true,
-        child: Column(
-          children: [
-            InstaAppBar(),
-            InstaPost(),
-            InstaBottomBar(),
-          ],
+        child: DefaultTabController(
+          initialIndex: 1,
+          length: 3,
+          child: TabBarView(
+            children: [
+              P1(),
+              HomeScreen(),
+              DirectScreen(),
+            ],
+          ),
         ),
       ),
     );

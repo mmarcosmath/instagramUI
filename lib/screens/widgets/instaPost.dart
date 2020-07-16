@@ -17,8 +17,8 @@ class _InstaPostState extends State<InstaPost> {
               width: 35,
               child: GestureDetector(
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                      left: 5, right: 2, top: 8, bottom: 8),
+                  padding:
+                      EdgeInsets.only(left: 5, right: 5, top: 8, bottom: 8),
                   child: Image.asset(
                     icon,
                     color: Colors.white,
@@ -31,7 +31,7 @@ class _InstaPostState extends State<InstaPost> {
             );
           }
 
-          Widget itemPost() {
+          Widget itemPost(Map data) {
             return Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -61,7 +61,7 @@ class _InstaPostState extends State<InstaPost> {
                           Text(
                             "mmarcosmath",
                             style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
+                                fontSize: 14.5, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -78,7 +78,7 @@ class _InstaPostState extends State<InstaPost> {
                       top: 5,
                     ),
                     child: Image.network(
-                      "https://i0.wp.com/blog.iteris.com.br/wp-content/uploads/2019/12/Imagem_Blog_Flutter_2.jpg?fit=1200%2C675&ssl=1",
+                      data['image'],
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -141,31 +141,42 @@ class _InstaPostState extends State<InstaPost> {
                           ),
                         ),
                       ),
-                      Text(
-                        'Curtido por ',
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      Text(
-                        "mmarcosmath ",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        'e ',
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      Text(
-                        "outras pessoas",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.bold),
-                      ),
+                      Expanded(
+                        child: Container(
+                          child: Row(
+                            children: [
+                              Text(
+                                'Curtido por ',
+                                style: TextStyle(fontSize: 14.5),
+                              ),
+                              Text(
+                                "mmarcosmath ",
+                                style: TextStyle(
+                                    fontSize: 14.5,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                'e ',
+                                style: TextStyle(fontSize: 14.5),
+                              ),
+                              Text(
+                                "outras pessoas",
+                                style: TextStyle(
+                                    fontSize: 14.5,
+                                    fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                   Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: Text(
                       'Ver todos os x comentários ',
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                      style: TextStyle(fontSize: 14.5, color: Colors.grey),
                     ),
                   ),
                   Row(
@@ -183,7 +194,7 @@ class _InstaPostState extends State<InstaPost> {
                       ),
                       Text(
                         'Adicione um comentário... ',
-                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                        style: TextStyle(fontSize: 14.5, color: Colors.grey),
                       ),
                     ],
                   )
@@ -205,10 +216,22 @@ class _InstaPostState extends State<InstaPost> {
                 SizedBox(
                   height: 5,
                 ),
-                itemPost(),
-                itemPost(),
-                itemPost(),
-                itemPost(),
+                itemPost({
+                  'image':
+                      'https://resultadosdigitais.com.br/blog/files/2017/03/como-escrever-para-blog-estrutura-de-post.png'
+                }),
+                itemPost({
+                  'image':
+                      'https://png.pngtree.com/png-clipart/20190516/original/pngtree-note-post-it-notes-exquisite-notes-notebook-png-image_3840370.jpg'
+                }),
+                itemPost({
+                  'image':
+                      'https://miro.medium.com/max/15636/1*kANnYVb1CpXOmyhmlS7ZOw.jpeg'
+                }),
+                itemPost({
+                  'image':
+                      'https://cdn-images-1.medium.com/max/1600/0*UoA7F02QOqSpEtPN'
+                }),
               ],
             ),
           );

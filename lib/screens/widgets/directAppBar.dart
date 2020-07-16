@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class InstaAppBar extends StatefulWidget {
+class DirectAppBar extends StatefulWidget {
   @override
-  _InstaAppBarState createState() => _InstaAppBarState();
+  _DirectAppBarState createState() => _DirectAppBarState();
 }
 
-class _InstaAppBarState extends State<InstaAppBar> {
+class _DirectAppBarState extends State<DirectAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,22 +36,15 @@ class _InstaAppBarState extends State<InstaAppBar> {
               Row(
                 children: [
                   buttonAppBar('icons/camera.png'),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: SizedBox(
-                      // width: constraints.maxWidth / 5,
-
-                      child: Image.network(
-                        'https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-1.png',
-                        color: Colors.white,
-                        alignment: Alignment.center,
-                        height: constraints.maxHeight * 0.5,
-                      ),
-                    ),
-                  ),
+                  Text("Direct",style: TextStyle(fontWeight: FontWeight.w600),),
                 ],
               ),
-              buttonAppBar('icons/direct.png')
+              Row(
+                children: [
+                  buttonAppBar('icons/camera.png'),
+                  buttonAppBar('icons/camera.png'),
+                ],
+              ),
             ],
           );
         },
